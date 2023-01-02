@@ -18,9 +18,13 @@ function App() {
   const deleteTask = (id) => {
     const updateTasks = tasksList.filter((task) => task.id !== id);
     setTasksList(updateTasks);
-
-    console.log("deleting task...", id);
   };
+  
+  const updateTask = (id) => {
+    console.log("updating task...", id);
+  };
+
+
   return (
     <div className="App">
       <Header />

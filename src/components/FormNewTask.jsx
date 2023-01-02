@@ -14,6 +14,7 @@ const FormNewTask = ({ tasksList, setTasksList }) => {
       complete: false,
     };
     setTasksList([...tasksList, taskObject]);
+    
   };
 
   return (
