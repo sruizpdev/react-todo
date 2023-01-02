@@ -3,10 +3,19 @@ import { useState } from "react";
 const FormNewTask = ({ tasksList, setTasksList }) => {
   const [newTask, setNewTask] = useState("");
 
+  const generateID = () => {
+    return Date.now().toString(10) + Math.random().toString().substring(2);
+  };
   const handleForm = (e) => {
     e.preventDefault();
-    setTasksList([...tasksList,newTask]);
+    const taskObject = {
+      id: generateID(),
+      name: newTask,
+      complete: false,
+    };
+    setTasksList([...tasksList, taskObject]);
   };
+
   return (
     <form onSubmit={handleForm}>
       <label className="block" htmlFor="newTask">
