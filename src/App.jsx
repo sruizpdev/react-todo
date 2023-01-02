@@ -15,6 +15,12 @@ function App() {
     localStorage.setItem("tasks", JSON.stringify(tasksList));
   }, [tasksList]);
 
+  const deleteTask = (id) => {
+    const updateTasks = tasksList.filter((task) => task.id !== id);
+    setTasksList(updateTasks);
+
+    console.log("deleting task...", id);
+  };
   return (
     <div className="App">
       <Header />
@@ -24,7 +30,7 @@ function App() {
           <FormNewTask tasksList={tasksList} setTasksList={setTasksList} />
         </div>
 
-        <ShowListTasks tasksList={tasksList} />
+        <ShowListTasks tasksList={tasksList} deleteTask={deleteTask} />
       </div>
     </div>
   );
