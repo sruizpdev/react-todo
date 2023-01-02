@@ -5,7 +5,7 @@ const ShowListTasks = ({ tasksList }) => {
   return (
     <>
       {tasksList.map((task) => {
-        return <Task task={task} />;
+        return <Task key={task.id} task={task} />;
       })}
     </>
   );

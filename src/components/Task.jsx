@@ -1,8 +1,8 @@
 const Task = ({ task }) => {
-  const { name, complete } = task;
+  const { id, name, complete } = task;
   return (
     <div>
-      {name} {!complete ? "no completada" : "completada"}
+      {id} {name} {!complete ? "no completada" : "completada"}
     </div>
   );
 };
